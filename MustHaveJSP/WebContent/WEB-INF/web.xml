@@ -10,7 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-    <context-param>
+<context-param>
     <param-name>OracleDriver</param-name>
     <param-value>oracle.jdbc.OracleDriver</param-value>
   </context-param>

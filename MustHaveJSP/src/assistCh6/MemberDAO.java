@@ -1,12 +1,30 @@
 package assistCh6;
-import test.*;
+import java.sql.SQLException;
+import java.util.*;
+
+import javax.servlet.ServletContext;
+
+import test.JDBConnect;
 
 public class MemberDAO extends JDBConnect {
+	public MemberDAO(ServletContext application) {
+		super(application);
+	}  // MemberDAO 생성자
 	
 	public MemberDAO(String driver, String url, String id, String pwd) {
 		super(driver, url, id, pwd);
 	}  // MemberDAO 생성자
 	
+//	public boolean isMember(String user_id, String user_pwd) {
+//		String query = "SELECT * FROM member WHERE id=" + user_id + " and pass=" + user_pwd;
+//		
+//		try {
+//			
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//	}
+//	
 	public MemberDTO getMemberDTO(String user_id, String user_pwd) {
 		MemberDTO dto = new MemberDTO();
 		String query = "select * from member where id=? and pass=?";	// db에서 일치하는 id와 pass를 찾기위한 쿼리문
@@ -33,5 +51,7 @@ public class MemberDAO extends JDBConnect {
 		}
 		return dto;
 	}  // getMemberDTO()
+	
+
 
 }
